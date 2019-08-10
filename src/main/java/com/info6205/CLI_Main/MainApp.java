@@ -7,7 +7,7 @@ import com.info6205.Constants.NNConstants;
 
 public class MainApp {
 
-    public static void main(String[] args) throws Exception {
+    public static void mainx(String[] args) throws Exception {
 
         // declaring the confusion matrix
 
@@ -15,8 +15,8 @@ public class MainApp {
         csvtoArray cs = new csvtoArray();
         csvtoarray2 cs2 = new csvtoarray2();
 
-        double[][] trainingResults = cs.sample("C:\\Users\\Dell\\Vivek\\PSA\\NeuralNetProject\\src\\main\\Dataset\\fashion-mnist_train.csv", 60000);
-        double[][] trainingData = cs2.sample("C:\\Users\\Dell\\Vivek\\PSA\\NeuralNetProject\\src\\main\\Dataset\\MNIST_Dataset_train.csv", 60000);
+        double[][] trainingResults = cs.sample("object_train.csv", 60000);
+        double[][] trainingData = cs2.sample("object_train.csv", 60000);
 
         System.out.println("Initialised Network with 2 hidden layers");
         System.out.println(" Hidden Layers : 1 -> 315, 2-> 28");
@@ -38,8 +38,8 @@ public class MainApp {
 
         System.out.println("Training Finised and entered the testing Phase");
 
-        double[][] testingResults = cs.sample("C:\\Users\\Dell\\Vivek\\PSA\\NeuralNetProject\\src\\main\\Dataset\\fashion-mnist_test.csv", 60000);
-        double[][] testingData = cs2.sample("C:\\Users\\Dell\\Vivek\\PSA\\NeuralNetProject\\src\\main\\Dataset\\fashion-mnist_test.csv", 60000);
+        double[][] testingResults = cs.sample("object_test.csv", 10000);
+        double[][] testingData = cs2.sample("object_test.csv", 10000);
         int[][] confusion_matrix = new int[10][10];
         for (int i = 0; i < testingResults.length; i++) {
             double[] calculatedOutput;
